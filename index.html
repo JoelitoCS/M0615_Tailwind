@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aetherfield</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN + config for custom fonts -->
+    <script>
+        tailwind = window.tailwind || {};
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'ui-sans-serif', 'system-ui'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased bg-gradient-to-b from-sky-100/90 to-slate-100 min-h-screen text-slate-900">
+
+    <header class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+        <div class="text-xl font-semibold tracking-tight">Aetherfield</div>
+        <nav>
+            <ul class="flex gap-6 items-center text-sm font-medium">
+                <li><a href="#" class="hover:underline">Product</a></li>
+                <li><a href="#" class="hover:underline">Journal</a></li>
+                <li><a href="#" class="hover:underline">About</a></li>
+                <li><a href="#" class="hover:underline">Careers</a></li>
+                <li><a href="#" class="ml-4 inline-flex items-center gap-2 text-sm font-semibold">Get started <span aria-hidden>→</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-1">
+        <section class="min-h-[70vh] flex items-center">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                <h1 class="font-serif text-[44px] md:text-[84px] leading-[0.95] md:leading-[0.94] font-bold text-slate-900">
+                    Sustainability insights,
+                    <br class="hidden md:inline" />
+                    <span class="block md:inline">built for business</span>
+                </h1>
+
+                <p class="mt-6 text-lg md:text-xl text-slate-700 max-w-2xl mx-auto">
+                    Track impact, reduce emissions, and accelerate progress—with clarity and confidence.
+                </p>
+
+                <div class="mt-10 flex justify-center gap-6">
+                    <a href="#" class="inline-flex items-center gap-3 bg-black text-white px-6 py-3 font-mono tracking-wide text-sm">
+                        <span class="inline-block w-2 h-2 bg-white rounded-full" aria-hidden></span>
+                        Request a demo
+                    </a>
+
+                    <a href="#" class="inline-flex items-center gap-3 bg-black text-white px-6 py-3 font-mono tracking-wide text-sm">
+                        <span class="inline-block w-2 h-2 bg-white rounded-full" aria-hidden></span>
+                        Explore the platform
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 text-center text-sm text-slate-500">&copy; Aetherfield</footer>
+</body>
+</html>
