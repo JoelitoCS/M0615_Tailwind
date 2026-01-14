@@ -1,72 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aetherfield</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CDN + config for custom fonts -->
-    <script>
-        tailwind = window.tailwind || {};
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Inter"', 'ui-sans-serif', 'system-ui'],
-                    }
-                }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetherfield - Sustainability Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .menu-overlay {
+            transform: translateY(-100%);
+            transition: transform 0.4s ease;
+        }
+        .menu-overlay.active {
+            transform: translateY(0);
+        }
+        .header-scroll {
+            background: linear-gradient(to bottom, #bfdbfe, #e5e7eb);
+            transition: background 0.3s ease;
+        }
+        .header-scroll.scrolled {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Animaciones de entrada */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-700 { animation-delay: 0.7s; }
+        .delay-800 { animation-delay: 0.8s; }
+    </style>
 </head>
-<body class="antialiased bg-gradient-to-b from-sky-100/90 to-slate-100 min-h-screen text-slate-900">
+<body class="bg-white min-h-screen">
+    <!-- Menu Overlay (solo mitad superior) -->
+    <div id="menuOverlay" class="menu-overlay fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl" style="height: 50vh;">
+        <div class="h-full flex flex-col max-w-md mx-auto">
+            <!-- Menu Header -->
+            <div class="flex justify-between items-center px-6 py-6 border-b border-gray-300">
+                <h2 class="text-2xl font-bold">Aetherfield</h2>
+                <button id="closeBtn" class="text-4xl font-light">×</button>
+            </div>
+            
+            <!-- Menu Items -->
+            <nav class="flex-1 py-4">
+                <a href="#" class="block px-6 py-4 text-2xl font-semibold border-b border-gray-300 hover:bg-gray-50 transition">Product</a>
+                <a href="#" class="block px-6 py-4 text-2xl font-semibold border-b border-gray-300 hover:bg-gray-50 transition">Journal</a>
+                <a href="#" class="block px-6 py-4 text-2xl font-semibold border-b border-gray-300 hover:bg-gray-50 transition">About</a>
+                <a href="#" class="block px-6 py-4 text-2xl font-semibold border-b border-gray-300 hover:bg-gray-50 transition">Careers</a>
+            </nav>
+            
+            <!-- Get Started Button - Oculto por defecto -->
+            <div id="getStartedBtn" class="px-6 pb-6 hidden">
+                <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition">Get started</button>
+            </div>
+        </div>
+    </div>
 
-    <header class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
-        <div class="text-xl font-semibold tracking-tight">Aetherfield</div>
-        <nav>
-            <ul class="flex gap-6 items-center text-sm font-medium">
-                <li><a href="#" class="hover:underline">Product</a></li>
-                <li><a href="#" class="hover:underline">Journal</a></li>
-                <li><a href="#" class="hover:underline">About</a></li>
-                <li><a href="#" class="hover:underline">Careers</a></li>
-                <li><a href="#" class="ml-4 inline-flex items-center gap-2 text-sm font-semibold">Get started <span aria-hidden>→</span></a></li>
-            </ul>
-        </nav>
+    <!-- Header (Fixed con transparencia al scroll) -->
+    <header id="header" class="header-scroll fixed top-0 left-0 right-0 z-40">
+        <div class="container mx-auto max-w-7xl px-6 py-6 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Aetherfield</h1>
+            <button id="menuBtn" class="text-4xl font-light transform rotate-0 transition-transform duration-300">+</button>
+        </div>
     </header>
 
-    <main class="flex-1">
-        <section class="min-h-[70vh] flex items-center">
-            <div class="max-w-5xl mx-auto px-6 text-center">
-                <h1 class="font-serif text-[44px] md:text-[84px] leading-[0.95] md:leading-[0.94] font-bold text-slate-900">
-                    Sustainability insights,
-                    <br class="hidden md:inline" />
-                    <span class="block md:inline">built for business</span>
-                </h1>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section con gradient -->
+        <section class="bg-gradient-to-b from-blue-200 to-gray-200 px-6 pt-32 pb-16">
+            <div class="container mx-auto max-w-md">
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl font-serif mb-6 leading-tight fade-in-up">
+                        Sustainability insights,<br>
+                        <span class="font-bold">built for business</span>
+                    </h2>
+                    <p class="text-lg mb-8 leading-relaxed fade-in-up delay-100">
+                        Track impact, reduce emissions, and<br>
+                        accelerate progress—with clarity and<br>
+                        confidence.
+                    </p>
 
-                <p class="mt-6 text-lg md:text-xl text-slate-700 max-w-2xl mx-auto">
-                    Track impact, reduce emissions, and accelerate progress—with clarity and confidence.
-                </p>
+                    <!-- CTA Buttons -->
+                    <div class="space-y-4 flex flex-col items-center">
+                        <button class="bg-black text-white px-6 py-3 text-left font-medium inline-block fade-in-up delay-200">
+                            • Request a demo
+                        </button>
+                        <button class="bg-black text-white px-6 py-3 text-left font-medium inline-block fade-in-up delay-300">
+                            • Explore the platform
+                        </button>
+                    </div>
+                </div>
 
-                <div class="mt-10 flex justify-center gap-6">
-                    <a href="#" class="inline-flex items-center gap-3 bg-black text-white px-6 py-3 font-mono tracking-wide text-sm">
-                        <span class="inline-block w-2 h-2 bg-white rounded-full" aria-hidden></span>
-                        Request a demo
-                    </a>
+                <!-- Dashboard Preview -->
+                <div class="mt-12 fade-in-up delay-400">
+                    <img src="imagenes/Hero image.png" alt="" class="w-full">
+                </div>
+            </div>
+        </section>
 
-                    <a href="#" class="inline-flex items-center gap-3 bg-black text-white px-6 py-3 font-mono tracking-wide text-sm">
-                        <span class="inline-block w-2 h-2 bg-white rounded-full" aria-hidden></span>
-                        Explore the platform
-                    </a>
+        <!-- New Section -->
+        <div class="bg-white px-6 py-16">
+            <div class="container mx-auto max-w-md">
+                <h2 class="text-4xl font-bold mb-12 leading-tight fade-in-up delay-500">
+                    Everything you need to measure, model, and act on sustainability
+                </h2>
+
+                <!-- Image Card -->
+                <div class="mb-16 fade-in-up delay-600">
+                    <img src="imagenes/imagen2.png" alt="Energy consumption" class="w-full rounded-lg">
+                </div>
+
+                <!-- Track Section -->
+                <div class="mb-12 pb-12 border-b border-gray-200 fade-in-up delay-100">
+                    <div class="flex justify-between items-baseline mb-4">
+                        <h3 class="text-2xl font-bold">Track</h3>
+                        <span class="text-gray-400 text-sm">001</span>
+                    </div>
+                    <p class="text-lg leading-relaxed">
+                        Emissions, energy, and waste across your value chain
+                    </p>
+                </div>
+
+                <!-- Model Section -->
+                <div class="mb-12 pb-12 border-b border-gray-200 fade-in-up delay-200">
+                    <div class="flex justify-between items-baseline mb-4">
+                        <h3 class="text-2xl font-bold">Model</h3>
+                        <span class="text-gray-400 text-sm">002</span>
+                    </div>
+                    <p class="text-lg leading-relaxed">
+                        Forecast performance and goal alignment
+                    </p>
+                </div>
+
+                <!-- Report Section -->
+                <div class="mb-12 pb-12 border-b border-gray-200 fade-in-up delay-300">
+                    <div class="flex justify-between items-baseline mb-4">
+                        <h3 class="text-2xl font-bold">Report</h3>
+                        <span class="text-gray-400 text-sm">003</span>
+                    </div>
+                    <p class="text-lg leading-relaxed">
+                        Generate ESG disclosures, automate frameworks
+                    </p>
+                </div>
+
+                <!-- Act Section -->
+                <div class="mb-12 pb-12 border-b border-gray-200 fade-in-up delay-400">
+                    <div class="flex justify-between items-baseline mb-4">
+                        <h3 class="text-2xl font-bold">Act</h3>
+                        <span class="text-gray-400 text-sm">004</span>
+                    </div>
+                    <p class="text-lg leading-relaxed">
+                        Surface insights and operational next steps
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explore Features Section -->
+        <section class="bg-white px-6 pb-16">
+            <div class="container mx-auto max-w-md">
+                <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition mb-16 fade-in-up delay-500">
+                    • Explore features
+                </button>
+
+                <!-- Built for clarity section con patrón -->
+                <div class="relative bg-gradient-to-br from-amber-50 to-stone-200 rounded-3xl overflow-hidden p-12 mb-16 fade-in-up delay-600" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,.03) 10px, rgba(0,0,0,.03) 20px);">
+                    <h2 class="text-5xl font-serif text-center mb-2 leading-tight">
+                        Built for clarity
+                    </h2>
+                    <h2 class="text-5xl font-serif text-center mb-16 leading-tight">
+                        Designed for action
+                    </h2>
+
+                    <!-- Card -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <!-- Icon -->
+                        <div class="mb-6">
+                            <svg class="w-16 h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="32" cy="32" r="30" />
+                                <line x1="32" y1="2" x2="32" y2="62" />
+                                <line x1="2" y1="32" x2="62" y2="32" />
+                            </svg>
+                        </div>
+
+                        <h3 class="text-3xl font-bold mb-4">Clarity drives action</h3>
+                        <p class="text-xl leading-relaxed text-gray-800">
+                            We believe better decisions start with better data—measured, visible, and trusted.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-12 text-center text-sm text-slate-500">&copy; Aetherfield</footer>
+    <script>
+        const menuBtn = document.querySelector('#menuBtn');
+        const closeBtn = document.querySelector('#closeBtn');
+        const menuOverlay = document.querySelector('#menuOverlay');
+        const header = document.querySelector('header');
+        const getStartedBtn = document.querySelector('#getStartedBtn');
+
+        menuBtn.addEventListener('click', () => {
+            menuOverlay.classList.add('active');
+            menuBtn.style.transform = 'rotate(45deg)';
+            // Mostrar el botón Get started cuando se abre el menú
+            getStartedBtn.classList.remove('hidden');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            menuOverlay.classList.remove('active');
+            menuBtn.style.transform = 'rotate(0deg)';
+            // Ocultar el botón Get started cuando se cierra el menú
+            getStartedBtn.classList.add('hidden');
+        });
+
+        // Scroll effect para header
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
