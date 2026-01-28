@@ -39,7 +39,7 @@
 </head>
 
 <body class="bg-white min-h-screen">
-    <!-- Menu Overlay (solo mitad superior) -->
+    
     <div id="menuOverlay"
         class="md:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl -translate-y-full transition-transform duration-400 ease-in-out">
         <div class="flex flex-col">
@@ -49,7 +49,7 @@
                 <button id="closeBtn" class="text-3xl font-light hover:text-gray-600 transition-colors">×</button>
             </div>
 
-            <!-- Menu Items -->
+            
             <nav>
                 <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Product</a>
                 <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Journal</a>
@@ -57,7 +57,7 @@
                 <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Careers</a>
             </nav>
 
-            <!-- Get Started Button -->
+            
             <div class="px-6 py-5">
                 <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition-colors">
                     Get started
@@ -66,319 +66,316 @@
         </div>
     </div>
 
-    <!-- Header (Fixed con transparencia al scroll) -->
-    <header id="header"
-        class="fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-blue-200 to-gray-200 transition-all duration-300">
-        <div class="container mx-auto max-w-7xl px-6 py-6 flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Aetherfield</h1>
-            <button id="menuBtn"
-                class="text-4xl font-light transform rotate-0 transition-transform duration-300 hover:scale-110">+</button>
+    
+    <header id="header" class="fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-blue-200 to-gray-200 transition-all duration-300">
+        <div class="container mx-auto max-w-7xl px-6 py-6">
+            <div class="flex justify-between items-center">
+                
+                <h1 class="text-2xl md:text-3xl font-bold">Aetherfield</h1>
+                
+               
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors">Product</a>
+                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors">Journal</a>
+                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors">About</a>
+                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors">Careers</a>
+                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors flex items-center gap-1">
+                        Get started
+                        <span>→</span>
+                    </a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-4xl font-light transform rotate-0 transition-transform duration-300 hover:scale-110">+</button>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
+    
     <main>
-        <!-- Hero Section con gradient -->
-        <section class="bg-gradient-to-b from-blue-200 to-gray-200 px-6 pt-32 pb-16">
-            <div class="container mx-auto max-w-md">
-                <div class="text-center mb-8">
-                    <h2 class="text-4xl font-serif mb-6 leading-tight opacity-0 animate-fade-in-up">
+        
+        <section class="bg-gradient-to-b from-blue-200 to-gray-200 px-6 pt-32 pb-16 md:pt-40 md:pb-24">
+            <div class="container mx-auto max-w-md md:max-w-4xl lg:max-w-6xl">
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif mb-6 leading-tight opacity-0 animate-fade-in-up">
                         Sustainability insights,<br>
                         <span class="font-bold">built for business</span>
                     </h2>
-                    <p class="text-lg mb-8 leading-relaxed opacity-0 animate-fade-in-up [animation-delay:100ms]">
-                        Track impact, reduce emissions, and<br>
-                        accelerate progress—with clarity and<br>
-                        confidence.
+                    <p class="text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed opacity-0 animate-fade-in-up [animation-delay:100ms]">
+                        Track impact, reduce emissions, and accelerate progress—with clarity and confidence.
                     </p>
 
-                    <!-- CTA Buttons -->
-                    <div class="space-y-4 flex flex-col items-center">
-                        <button
-                            class="bg-black text-white px-6 py-3 text-left font-medium inline-block opacity-0 animate-fade-in-up [animation-delay:200ms] hover:bg-gray-800 transition-colors">
+                    
+                    <div class="space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row items-center justify-center">
+                        <button class="bg-black text-white px-6 py-3 font-medium opacity-0 animate-fade-in-up [animation-delay:200ms] hover:bg-gray-800 transition-colors">
                             • Request a demo
                         </button>
-                        <button
-                            class="bg-black text-white px-6 py-3 text-left font-medium inline-block opacity-0 animate-fade-in-up [animation-delay:300ms] hover:bg-gray-800 transition-colors">
+                        <button class="bg-black text-white px-6 py-3 font-medium opacity-0 animate-fade-in-up [animation-delay:300ms] hover:bg-gray-800 transition-colors">
                             • Explore the platform
                         </button>
                     </div>
                 </div>
 
-                <!-- Dashboard Preview -->
+                
                 <div class="mt-12 opacity-0 animate-fade-in-up [animation-delay:400ms]">
-                    <img src="imagenes/imagen1.png" alt="Dashboard preview" class="w-full rounded-lg shadow-xl">
+                    <img src="imagenes/imagen1.png" alt="Dashboard preview" class="w-full rounded-lg shadow-xl border-4 border-black">
                 </div>
             </div>
         </section>
 
-        <!-- New Section -->
-        <div class="bg-white px-6 py-16">
-            <div class="container mx-auto max-w-md">
-                <h2 class="text-4xl font-bold mb-12 leading-tight opacity-0 animate-fade-in-up [animation-delay:500ms]">
+        
+        <div class="bg-white px-6 py-16 md:py-24">
+            <div class="container mx-auto max-w-md md:max-w-4xl lg:max-w-6xl">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-12 md:mb-16 leading-tight opacity-0 animate-fade-in-up [animation-delay:500ms]">
                     Everything you need to measure, model, and act on sustainability
                 </h2>
 
-                <!-- Image Card -->
-                <div class="mb-16 opacity-0 animate-fade-in-up [animation-delay:600ms]">
-                    <img src="imagenes/imagen2.png" alt="Energy consumption"
-                        class="w-full rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                
+                <div class="mb-16 md:mb-20 opacity-0 animate-fade-in-up [animation-delay:600ms]">
+                    <img src="imagenes/imagen2.png" alt="Energy consumption" class="w-full rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 </div>
 
-                <!-- Track Section -->
-                <div
-                    class="mb-12 pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:100ms] hover:border-gray-400 transition-colors">
-                    <div class="flex justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold">Track</h3>
-                        <span class="text-gray-400 text-sm">001</span>
+               
+                <div class="grid md:grid-cols-2 gap-12 md:gap-x-16">
+                    
+                    <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:100ms] hover:border-gray-400 transition-colors">
+                        <div class="flex justify-between items-baseline mb-4">
+                            <h3 class="text-2xl md:text-3xl font-bold">Track</h3>
+                            <span class="text-gray-400 text-sm">001</span>
+                        </div>
+                        <p class="text-lg md:text-xl leading-relaxed">
+                            Emissions, energy, and waste across your value chain
+                        </p>
                     </div>
-                    <p class="text-lg leading-relaxed">
-                        Emissions, energy, and waste across your value chain
-                    </p>
+
+                   
+                    <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:200ms] hover:border-gray-400 transition-colors">
+                        <div class="flex justify-between items-baseline mb-4">
+                            <h3 class="text-2xl md:text-3xl font-bold">Model</h3>
+                            <span class="text-gray-400 text-sm">002</span>
+                        </div>
+                        <p class="text-lg md:text-xl leading-relaxed">
+                            Forecast performance and goal alignment
+                        </p>
+                    </div>
+
+                    
+                    <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:300ms] hover:border-gray-400 transition-colors">
+                        <div class="flex justify-between items-baseline mb-4">
+                            <h3 class="text-2xl md:text-3xl font-bold">Report</h3>
+                            <span class="text-gray-400 text-sm">003</span>
+                        </div>
+                        <p class="text-lg md:text-xl leading-relaxed">
+                            Generate ESG disclosures, automate frameworks
+                        </p>
+                    </div>
+
+                    
+                    <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:400ms] hover:border-gray-400 transition-colors">
+                        <div class="flex justify-between items-baseline mb-4">
+                            <h3 class="text-2xl md:text-3xl font-bold">Act</h3>
+                            <span class="text-gray-400 text-sm">004</span>
+                        </div>
+                        <p class="text-lg md:text-xl leading-relaxed">
+                            Surface insights and operational next steps
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Model Section -->
-                <div
-                    class="mb-12 pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:200ms] hover:border-gray-400 transition-colors">
-                    <div class="flex justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold">Model</h3>
-                        <span class="text-gray-400 text-sm">002</span>
-                    </div>
-                    <p class="text-lg leading-relaxed">
-                        Forecast performance and goal alignment
-                    </p>
-                </div>
-
-                <!-- Report Section -->
-                <div
-                    class="mb-12 pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:300ms] hover:border-gray-400 transition-colors">
-                    <div class="flex justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold">Report</h3>
-                        <span class="text-gray-400 text-sm">003</span>
-                    </div>
-                    <p class="text-lg leading-relaxed">
-                        Generate ESG disclosures, automate frameworks
-                    </p>
-                </div>
-
-                <!-- Act Section -->
-                <div
-                    class="mb-12 pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:400ms] hover:border-gray-400 transition-colors">
-                    <div class="flex justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold">Act</h3>
-                        <span class="text-gray-400 text-sm">004</span>
-                    </div>
-                    <p class="text-lg leading-relaxed">
-                        Surface insights and operational next steps
-                    </p>
-                </div>
-                <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition-colors mb-16 opacity-0 animate-fade-in-up [animation-delay:500ms] hover:shadow-lg">
+                <button class="bg-black text-white w-full md:w-auto md:px-12 py-4 font-mono font-semibold hover:bg-gray-800 transition-colors mt-16 opacity-0 animate-fade-in-up [animation-delay:500ms] hover:shadow-lg">
                     • Explore features
                 </button>
             </div>
         </div>
 
-        <!-- Build for clairuty sectuion -->
-
-        <div class="container mx-auto">
-
-            <!-- Built for clarity section con patrón -->
-            <div class="relative bg-gradient-to-br from-amber-50 to-stone-200 overflow-hidden p-12 mb-16 animate-fade-in-up [animation-delay:600ms]">
-                <h2 class="text-5xl font-serif text-center mb-2 leading-tight">
+        
+        <div class="mx-auto">
+            <div class="relative bg-gradient-to-br from-amber-50 to-stone-200 overflow-hidden p-8 md:p-16 lg:p-20 mb-16 animate-fade-in-up [animation-delay:600ms] w-full">
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif text-center mb-2 leading-tight">
                     Built for clarity
                 </h2>
-                <h2 class="text-5xl font-serif text-center mb-16 leading-tight">
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif text-center mb-12 md:mb-20 leading-tight">
                     Designed for action
                 </h2>
 
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 ">
-                    <!-- Icon -->
-                    <div class="mb-6">
-                        <img src="imagenes/iconoHome1.png" alt="icono1">
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="mb-6">
+                            <img src="imagenes/iconoHome1.png" alt="icono1" class="w-16 h-16">
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Clarity drives action</h3>
+                        <p class="text-lg md:text-xl leading-relaxed text-gray-800">
+                            We believe better decisions start with better data—measured, visible, and trusted.
+                        </p>
                     </div>
 
-                    <h3 class="text-3xl font-bold mb-4">Clarity drives action</h3>
-                    <p class="text-xl leading-relaxed text-gray-800">
-                        We believe better decisions start with better data—measured, visible, and trusted.
-                    </p>
-                </div>
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 mt-6">
-                    <!-- Icon -->
-                    <div class="mb-6">
-                        <img src="imagenes/iconoHome2.png" alt="icono1">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="mb-6">
+                            <img src="imagenes/iconoHome2.png" alt="icono2" class="w-16 h-16">
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Sustainability is a systems problem</h3>
+                        <p class="text-lg md:text-xl leading-relaxed text-gray-800">
+                            We build tools that help teams connect the dots between operations, impact, and accountability.
+                        </p>
                     </div>
 
-                    <h3 class="text-3xl font-bold mb-4">Sustainability is a systems problem</h3>
-                    <p class="text-xl leading-relaxed text-gray-800">
-                        We build tools that help teams connect the dots between operations, impact, and
-                        accountability.
-                    </p>
-                </div>
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 mt-6">
-                    <!-- Icon -->
-                    <div class="mb-6">
-                        <img src="imagenes/iconoHome3.png" alt="icono1">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 md:col-span-2 lg:col-span-1">
+                        <div class="mb-6">
+                            <img src="imagenes/iconoHome3.png" alt="icono3" class="w-16 h-16">
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Progress over perfection</h3>
+                        <p class="text-lg md:text-xl leading-relaxed text-gray-800">
+                            We support real-world momentum—helping organizations move from ambition to measurable change.
+                        </p>
                     </div>
-
-                    <h3 class="text-3xl font-bold mb-4">Progress over perfection</h3>
-                    <p class="text-xl leading-relaxed text-gray-800">
-                        We support real-world momentum—helping organizations move from ambition to measurable
-                        change.
-                    </p>
                 </div>
-
             </div>
         </div>
 
-        <!-- Case study section -->
-
-        <div class="pb-20">
-            <div class="p-5 bg-[#F6F8FB] rounded-2xl mx-auto w-96 h-auto">
-                <img class="w-full" src="imagenes/imagenStudyHome.png" alt="Study">
+        
+        <div class="pb-20 px-6">
+            <div class="p-5 bg-[#F6F8FB] rounded-2xl mx-auto max-w-md">
+                <img class="w-full rounded-lg" src="imagenes/imagenStudyHome.png" alt="Study">
                 <div class="mt-5">
-                    <h3 class="font-semibold mb-3">Why Acme Inc chose Aetherfield</h3>
-                    <p>With fragmented data and growing reporting pressure, 
-                            Acme turned to Aetherfield to streamline their ESG workflows. The result? Faster decisions, 
-                            fewer spreadsheets, and 34% more coverage.
+                    <h3 class="text-xl font-semibold mb-3">Why Acme Inc chose Aetherfield</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        With fragmented data and growing reporting pressure, Acme turned to Aetherfield to streamline their ESG workflows. The result? Faster decisions, fewer spreadsheets, and 34% more coverage.
                     </p>
-                    <button class="mt-8 bg-black text-white  p-1.5 text-left font-medium inline-block hover:bg-gray-800 transition-colors w-full text-center text-sm font-mono">Read case study</button>
+                    <button class="mt-8 bg-black text-white p-3 hover:bg-gray-800 transition-colors w-full text-center text-sm font-mono font-semibold">
+                        Read case study
+                    </button>
                 </div>
             </div>
         </div>
 
-       
-        <!-- From the journal section -->
+        
         <div class="px-6 pb-20">
-            <div class="container mx-auto max-w-md">
-
-                <h2 class="text-4xl font-bold text-center mb-8">From the journal</h2>
-                <hr class="border-t border-gray-300 mb-8">
+            <div class="container mx-auto max-w-md md:max-w-4xl lg:max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-8">From the journal</h2>
+                <hr class="border-t border-gray-300 mb-8 md:mb-12">
             
-                <article class="mb-5 pb-4">
-                    <div class="mb-4">
-                        <img src="imagenes/imagen1journal.png" alt="Climate-Ready Data Stack" class="w-full rounded-lg">
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">
-                        How to Build a Climate-Ready Data Stack
-                    </h3>
-                    <div class="flex items-center gap-3 text-sm text-gray-600">
-                        <span>Insights</span>
-                        <span>•</span>
-                        <span>4 min</span>
-                    </div>
-                </article>
                 
-                <hr class="border-t border-gray-300 mb-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="group">
+                        <div class="mb-4 overflow-hidden rounded-lg">
+                            <img src="imagenes/imagen1journal.png" alt="Climate-Ready Data Stack" class="w-full rounded-lg group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            How to Build a Climate-Ready Data Stack
+                        </h3>
+                        <div class="flex items-center gap-3 text-sm text-gray-600">
+                            <span>Insights</span>
+                            <span>•</span>
+                            <span>4 min</span>
+                        </div>
+                    </article>
+                    
+                    <article class="group">
+                        <div class="mb-4 overflow-hidden rounded-lg">
+                            <img src="imagenes/imagen2journal.png" alt="Sustainability Impact Operational" class="w-full rounded-lg group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Sustainability Isn't a Side Project: Making Impact Operational
+                        </h3>
+                        <div class="flex items-center gap-3 text-sm text-gray-600">
+                            <span>Strategy</span>
+                            <span>•</span>
+                            <span>7 min</span>
+                        </div>
+                    </article>
+                    
+                    <article class="group">
+                        <div class="mb-4 overflow-hidden rounded-lg">
+                            <img src="imagenes/imagen3journal.png" alt="Aetherfield Model Data Into Action" class="w-full rounded-lg group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Inside the Aetherfield Model: How We Turn Data Into Action
+                        </h3>
+                        <div class="flex items-center gap-3 text-sm text-gray-600">
+                            <span>Insights</span>
+                            <span>•</span>
+                            <span>5 min</span>
+                        </div>
+                    </article>
+                </div>
                 
+                <hr class="border-t border-gray-300 my-12">
                 
-                <article class="mb-5 pb-4">
-                    <div class="mb-4">
-                        <img src="imagenes/imagen2journal.png" alt="Sustainability Impact Operational" class="w-full rounded-lg">
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">
-                        Sustainability Isn't a Side Project: Making Impact Operational
-                    </h3>
-                    <div class="flex items-center gap-3 text-sm text-gray-600">
-                        <span>Strategy</span>
-                        <span>•</span>
-                        <span>7 min</span>
-                    </div>
-                </article>
-                
-                <hr class="border-t border-gray-300 mb-8">
-                
-            
-                <article class="mb-5 pb-4">
-                    <div class="mb-4">
-                        <img src="imagenes/imagen3journal.png" alt="Aetherfield Model Data Into Action" class="w-full rounded-lg">
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 ">
-                        Inside the Aetherfield Model: How We Turn Data Into Action
-                    </h3>
-                    <div class="flex items-center gap-3 text-sm text-gray-600">
-                        <span>Insights</span>
-                        <span>•</span>
-                        <span>5 min</span>
-                    </div>
-                </article>
-                
-                <hr class="border-t border-gray-300 mb-8">
-                
-                <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition-colors">View all articles</button>
+                <div class="text-center">
+                    <button class="bg-black text-white px-12 py-4 font-mono font-semibold hover:bg-gray-800 transition-colors">
+                        View all articles
+                    </button>
+                </div>
             </div>
         </div>
 
         <!-- Testimonial section -->
-        <div class="pb-16">
-            <div class="container mx-auto max-w-md">
-                
-                <div class="mb-8">
-                    <img src="imagenes/imagentestimonio.png" alt="Testimonial" class="w-full rounded-lg">
-                </div>
-                
-                
-                <img class="mb-6" src="imagenes/comillas.png" alt="comillas">
-                
-                
-                <div class="mb-8">
-                    <p class="text-2xl font-bold leading-tight mb-6">
-                        We finally moved past spreadsheets and guesswork. Now we have real data to guide real decisions.
-                    </p>
+        <div class="pb-16 px-6">
+            <div class="container mx-auto max-w-md md:max-w-4xl">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="imagenes/imagentestimonio.png" alt="Testimonial" class="w-full rounded-lg">
+                    </div>
                     
-                    <footer>
-                        <p class="font-semibold text-lg mb-1">Elliot Williams</p>
-                        <p class="text-gray-600">Head of Sustainability, Flux Materials</p>
-                    </footer>
-                </div>
-                
-                
-                
-                
-            </div>
-
-        </div>
-
-        <div class="m-auto bg-gray-100 p-10 pb-14 text-center w-full">
-            <h2 class="text-3xl font-bold mb-6">
-                Ready to operationalize your sustainability goals?
-            </h2>
+                    <div>
+                        <img class="mb-6 w-16" src="imagenes/comillas.png" alt="comillas">
                         
-            <button class="bg-black text-white px-6 py-3 font-mono font-semibold hover:bg-gray-800 transition-colors">
-                • Request a demo
-            </button>
+                        <blockquote class="mb-8">
+                            <p class="text-2xl md:text-3xl font-bold leading-tight mb-6">
+                                We finally moved past spreadsheets and guesswork. Now we have real data to guide real decisions.
+                            </p>
+                            
+                            <footer>
+                                <p class="font-semibold text-lg mb-1">Elliot Williams</p>
+                                <p class="text-gray-600">Head of Sustainability, Flux Materials</p>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        
-        
+        <!-- CTA section -->
+        <div class="bg-gray-100 py-16 md:py-20 text-center">
+            <div class="container mx-auto max-w-2xl px-6">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                    Ready to operationalize your sustainability goals?
+                </h2>
+                            
+                <button class="bg-black text-white px-8 py-4 font-mono font-semibold hover:bg-gray-800 transition-colors">
+                    • Request a demo
+                </button>
+            </div>
+        </div>
     </main>
 
-    
     <!-- Footer -->
-    <footer class="bg-[#E8E548] px-6 py-12">
-        <div class="container mx-auto max-w-md">
+    <footer class="bg-[#E8E548] px-6 py-12 md:py-16">
+        <div class="container mx-auto max-w-md md:max-w-6xl">
             <!-- Navigation Links -->
             <nav class="text-center mb-6">
-                <a href="#" class="inline-block mx-3 font-semibold hover:underline">Product</a>
-                <a href="#" class="inline-block mx-3 font-semibold hover:underline">Journal</a>
-                <a href="#" class="inline-block mx-3 font-semibold hover:underline">About</a>
-                <a href="#" class="inline-block mx-3 font-semibold hover:underline">Careers</a>
+                <a href="#" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Product</a>
+                <a href="#" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Journal</a>
+                <a href="#" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">About</a>
+                <a href="#" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Careers</a>
             </nav>
             
             <div class="text-center mb-6">
                 <a href="#" class="font-semibold hover:underline">Get started</a>
             </div>
             
-            <!-- Copyright -->
+            
             <p class="text-center text-sm mb-8">© 2025 · All rights reserved</p>
             
-            <!-- Decorative Image -->
-            <div class="mb-8">
+            
+            <div class="mb-8 max-w-2xl mx-auto">
                 <img src="imagenes/imagenfooter.png" alt="Pattern" class="w-full rounded-lg">
             </div>
             
-            <!-- Logo -->
+            
             <div class="text-center">
-                <h2 class="text-5xl font-bold">Aetherfield</h2>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold">Aetherfield</h2>
             </div>
         </div>
     </footer>
@@ -388,21 +385,23 @@
         const closeBtn = document.querySelector('#closeBtn');
         const menuOverlay = document.querySelector('#menuOverlay');
         const header = document.querySelector('header');
-        const getStartedBtn = document.querySelector('#getStartedBtn');
 
-        menuBtn.addEventListener('click', () => {
-            menuOverlay.classList.remove('-translate-y-full');
-            menuOverlay.classList.add('translate-y-0');
-            menuBtn.style.transform = 'rotate(45deg)';
-            getStartedBtn.classList.remove('hidden');
-        });
+        // Mobile menu toggle
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                menuOverlay.classList.remove('-translate-y-full');
+                menuOverlay.classList.add('translate-y-0');
+                menuBtn.style.transform = 'rotate(45deg)';
+            });
+        }
 
-        closeBtn.addEventListener('click', () => {
-            menuOverlay.classList.add('-translate-y-full');
-            menuOverlay.classList.remove('translate-y-0');
-            menuBtn.style.transform = 'rotate(0deg)';
-            getStartedBtn.classList.add('hidden');
-        });
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                menuOverlay.classList.add('-translate-y-full');
+                menuOverlay.classList.remove('translate-y-0');
+                menuBtn.style.transform = 'rotate(0deg)';
+            });
+        }
 
         // Scroll effect para header
         window.addEventListener('scroll', () => {
