@@ -1,81 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aetherfield - Sustainability Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .menu-overlay {
-            transform: translateY(-100%);
-            transition: transform 0.4s ease;
-        }
-        .menu-overlay.active {
-            transform: translateY(0);
-        }
-        .header-scroll {
-            background: linear-gradient(to bottom, #bfdbfe, #e5e7eb);
-            transition: background 0.3s ease;
-        }
-        .header-scroll.scrolled {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-        }
-        
-        /* Animaciones de entrada */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease forwards',
+                        'slide-down': 'slideDown 0.4s ease forwards',
+                        'slide-up': 'slideUp 0.4s ease forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(-100%)' }
+                        }
+                    }
+                }
             }
         }
-        
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        .delay-500 { animation-delay: 0.5s; }
-        .delay-600 { animation-delay: 0.6s; }
-        .delay-700 { animation-delay: 0.7s; }
-        .delay-800 { animation-delay: 0.8s; }
-    </style>
+    </script>
 </head>
+
 <body class="bg-white min-h-screen">
     <!-- Menu Overlay (solo mitad superior) -->
-    <div id="menuOverlay" class="menu-overlay fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl" style="height: 50vh;">
-        <div class="h-full flex flex-col max-w-md mx-auto">
+    <div id="menuOverlay"
+        class="md:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl -translate-y-full transition-transform duration-400 ease-in-out">
+        <div class="flex flex-col">
             <!-- Menu Header -->
-            <div class="flex justify-between items-center px-6 py-6 border-b border-gray-300">
-                <h2 class="text-2xl font-bold">Aetherfield</h2>
-                <button id="closeBtn" class="text-4xl font-light">×</button>
+            <div class="flex justify-between items-center px-6 py-5 border-b border-gray-200">
+                <h2 class="text-xl font-bold">Aetherfield</h2>
+                <button id="closeBtn" class="text-3xl font-light hover:text-gray-600 transition-colors">×</button>
             </div>
-            
+
             <!-- Menu Items -->
-            <nav class="flex-1 py-4">
-                <a href="#" class="block px-6 py-4 text-2xl font-semibold border-b border-gray-300 hover:bg-gray-50 transition">Product</a>
-                <a href="#" class="block px-6 py-4 text-2xl font-semibold border-b border-gray-300 hover:bg-gray-50 transition">Journal</a>
-                <a href="#" class="block px-6 py-4 text-2xl font-semibold border-b border-gray-300 hover:bg-gray-50 transition">About</a>
-                <a href="#" class="block px-6 py-4 text-2xl font-semibold border-b border-gray-300 hover:bg-gray-50 transition">Careers</a>
+            <nav>
+                <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Product</a>
+                <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Journal</a>
+                <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">About</a>
+                <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Careers</a>
             </nav>
-            
-            <!-- Get Started Button - Oculto por defecto -->
-            <div id="getStartedBtn" class="px-6 pb-6 hidden">
-                <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition">Get started</button>
+
+            <!-- Get Started Button -->
+            <div class="px-6 py-5">
+                <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition-colors">
+                    Get started
+                </button>
             </div>
         </div>
     </div>
 
     <!-- Header (Fixed con transparencia al scroll) -->
-    <header id="header" class="header-scroll fixed top-0 left-0 right-0 z-40">
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-blue-200 to-gray-200 transition-all duration-300">
         <div class="container mx-auto max-w-7xl px-6 py-6 flex justify-between items-center">
             <h1 class="text-3xl font-bold">Aetherfield</h1>
-            <button id="menuBtn" class="text-4xl font-light transform rotate-0 transition-transform duration-300">+</button>
+            <button id="menuBtn"
+                class="text-4xl font-light transform rotate-0 transition-transform duration-300 hover:scale-110">+</button>
         </div>
     </header>
 
@@ -85,11 +82,11 @@
         <section class="bg-gradient-to-b from-blue-200 to-gray-200 px-6 pt-32 pb-16">
             <div class="container mx-auto max-w-md">
                 <div class="text-center mb-8">
-                    <h2 class="text-4xl font-serif mb-6 leading-tight fade-in-up">
+                    <h2 class="text-4xl font-serif mb-6 leading-tight opacity-0 animate-fade-in-up">
                         Sustainability insights,<br>
                         <span class="font-bold">built for business</span>
                     </h2>
-                    <p class="text-lg mb-8 leading-relaxed fade-in-up delay-100">
+                    <p class="text-lg mb-8 leading-relaxed opacity-0 animate-fade-in-up [animation-delay:100ms]">
                         Track impact, reduce emissions, and<br>
                         accelerate progress—with clarity and<br>
                         confidence.
@@ -97,18 +94,20 @@
 
                     <!-- CTA Buttons -->
                     <div class="space-y-4 flex flex-col items-center">
-                        <button class="bg-black text-white px-6 py-3 text-left font-medium inline-block fade-in-up delay-200">
+                        <button
+                            class="bg-black text-white px-6 py-3 text-left font-medium inline-block opacity-0 animate-fade-in-up [animation-delay:200ms] hover:bg-gray-800 transition-colors">
                             • Request a demo
                         </button>
-                        <button class="bg-black text-white px-6 py-3 text-left font-medium inline-block fade-in-up delay-300">
+                        <button
+                            class="bg-black text-white px-6 py-3 text-left font-medium inline-block opacity-0 animate-fade-in-up [animation-delay:300ms] hover:bg-gray-800 transition-colors">
                             • Explore the platform
                         </button>
                     </div>
                 </div>
 
                 <!-- Dashboard Preview -->
-                <div class="mt-12 fade-in-up delay-400">
-                    <img src="imagenes/Hero image.png" alt="" class="w-full">
+                <div class="mt-12 opacity-0 animate-fade-in-up [animation-delay:400ms]">
+                    <img src="imagenes/imagen1.png" alt="Dashboard preview" class="w-full rounded-lg shadow-xl">
                 </div>
             </div>
         </section>
@@ -116,17 +115,19 @@
         <!-- New Section -->
         <div class="bg-white px-6 py-16">
             <div class="container mx-auto max-w-md">
-                <h2 class="text-4xl font-bold mb-12 leading-tight fade-in-up delay-500">
+                <h2 class="text-4xl font-bold mb-12 leading-tight opacity-0 animate-fade-in-up [animation-delay:500ms]">
                     Everything you need to measure, model, and act on sustainability
                 </h2>
 
                 <!-- Image Card -->
-                <div class="mb-16 fade-in-up delay-600">
-                    <img src="imagenes/imagen2.png" alt="Energy consumption" class="w-full rounded-lg">
+                <div class="mb-16 opacity-0 animate-fade-in-up [animation-delay:600ms]">
+                    <img src="imagenes/imagen2.png" alt="Energy consumption"
+                        class="w-full rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 </div>
 
                 <!-- Track Section -->
-                <div class="mb-12 pb-12 border-b border-gray-200 fade-in-up delay-100">
+                <div
+                    class="mb-12 pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:100ms] hover:border-gray-400 transition-colors">
                     <div class="flex justify-between items-baseline mb-4">
                         <h3 class="text-2xl font-bold">Track</h3>
                         <span class="text-gray-400 text-sm">001</span>
@@ -137,7 +138,8 @@
                 </div>
 
                 <!-- Model Section -->
-                <div class="mb-12 pb-12 border-b border-gray-200 fade-in-up delay-200">
+                <div
+                    class="mb-12 pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:200ms] hover:border-gray-400 transition-colors">
                     <div class="flex justify-between items-baseline mb-4">
                         <h3 class="text-2xl font-bold">Model</h3>
                         <span class="text-gray-400 text-sm">002</span>
@@ -148,7 +150,8 @@
                 </div>
 
                 <!-- Report Section -->
-                <div class="mb-12 pb-12 border-b border-gray-200 fade-in-up delay-300">
+                <div
+                    class="mb-12 pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:300ms] hover:border-gray-400 transition-colors">
                     <div class="flex justify-between items-baseline mb-4">
                         <h3 class="text-2xl font-bold">Report</h3>
                         <span class="text-gray-400 text-sm">003</span>
@@ -159,7 +162,8 @@
                 </div>
 
                 <!-- Act Section -->
-                <div class="mb-12 pb-12 border-b border-gray-200 fade-in-up delay-400">
+                <div
+                    class="mb-12 pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:400ms] hover:border-gray-400 transition-colors">
                     <div class="flex justify-between items-baseline mb-4">
                         <h3 class="text-2xl font-bold">Act</h3>
                         <span class="text-gray-400 text-sm">004</span>
@@ -168,45 +172,216 @@
                         Surface insights and operational next steps
                     </p>
                 </div>
+                <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition-colors mb-16 opacity-0 animate-fade-in-up [animation-delay:500ms] hover:shadow-lg">
+                    • Explore features
+                </button>
             </div>
         </div>
 
-        <!-- Explore Features Section -->
-        <section class="bg-white px-6 pb-16">
-            <div class="container mx-auto max-w-md">
-                <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition mb-16 fade-in-up delay-500">
-                    • Explore features
-                </button>
+        <!-- Build for clairuty sectuion -->
 
-                <!-- Built for clarity section con patrón -->
-                <div class="relative bg-gradient-to-br from-amber-50 to-stone-200 rounded-3xl overflow-hidden p-12 mb-16 fade-in-up delay-600" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,.03) 10px, rgba(0,0,0,.03) 20px);">
-                    <h2 class="text-5xl font-serif text-center mb-2 leading-tight">
-                        Built for clarity
-                    </h2>
-                    <h2 class="text-5xl font-serif text-center mb-16 leading-tight">
-                        Designed for action
-                    </h2>
+        <div class="container mx-auto">
 
-                    <!-- Card -->
-                    <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <!-- Icon -->
-                        <div class="mb-6">
-                            <svg class="w-16 h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="32" cy="32" r="30" />
-                                <line x1="32" y1="2" x2="32" y2="62" />
-                                <line x1="2" y1="32" x2="62" y2="32" />
-                            </svg>
-                        </div>
+            <!-- Built for clarity section con patrón -->
+            <div class="relative bg-gradient-to-br from-amber-50 to-stone-200 overflow-hidden p-12 mb-16 animate-fade-in-up [animation-delay:600ms]">
+                <h2 class="text-5xl font-serif text-center mb-2 leading-tight">
+                    Built for clarity
+                </h2>
+                <h2 class="text-5xl font-serif text-center mb-16 leading-tight">
+                    Designed for action
+                </h2>
 
-                        <h3 class="text-3xl font-bold mb-4">Clarity drives action</h3>
-                        <p class="text-xl leading-relaxed text-gray-800">
-                            We believe better decisions start with better data—measured, visible, and trusted.
-                        </p>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 ">
+                    <!-- Icon -->
+                    <div class="mb-6">
+                        <img src="imagenes/iconoHome1.png" alt="icono1">
                     </div>
+
+                    <h3 class="text-3xl font-bold mb-4">Clarity drives action</h3>
+                    <p class="text-xl leading-relaxed text-gray-800">
+                        We believe better decisions start with better data—measured, visible, and trusted.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 mt-6">
+                    <!-- Icon -->
+                    <div class="mb-6">
+                        <img src="imagenes/iconoHome2.png" alt="icono1">
+                    </div>
+
+                    <h3 class="text-3xl font-bold mb-4">Sustainability is a systems problem</h3>
+                    <p class="text-xl leading-relaxed text-gray-800">
+                        We build tools that help teams connect the dots between operations, impact, and
+                        accountability.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 mt-6">
+                    <!-- Icon -->
+                    <div class="mb-6">
+                        <img src="imagenes/iconoHome3.png" alt="icono1">
+                    </div>
+
+                    <h3 class="text-3xl font-bold mb-4">Progress over perfection</h3>
+                    <p class="text-xl leading-relaxed text-gray-800">
+                        We support real-world momentum—helping organizations move from ambition to measurable
+                        change.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Case study section -->
+
+        <div class="pb-20">
+            <div class="p-5 bg-[#F6F8FB] rounded-2xl mx-auto w-96 h-auto">
+                <img class="w-full" src="imagenes/imagenStudyHome.png" alt="Study">
+                <div class="mt-5">
+                    <h3 class="font-semibold mb-3">Why Acme Inc chose Aetherfield</h3>
+                    <p>With fragmented data and growing reporting pressure, 
+                            Acme turned to Aetherfield to streamline their ESG workflows. The result? Faster decisions, 
+                            fewer spreadsheets, and 34% more coverage.
+                    </p>
+                    <button class="mt-8 bg-black text-white  p-1.5 text-left font-medium inline-block hover:bg-gray-800 transition-colors w-full text-center text-sm font-mono">Read case study</button>
                 </div>
             </div>
-        </section>
+        </div>
+
+       
+        <!-- From the journal section -->
+        <div class="px-6 pb-20">
+            <div class="container mx-auto max-w-md">
+
+                <h2 class="text-4xl font-bold text-center mb-8">From the journal</h2>
+                <hr class="border-t border-gray-300 mb-8">
+            
+                <article class="mb-5 pb-4">
+                    <div class="mb-4">
+                        <img src="imagenes/imagen1journal.png" alt="Climate-Ready Data Stack" class="w-full rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        How to Build a Climate-Ready Data Stack
+                    </h3>
+                    <div class="flex items-center gap-3 text-sm text-gray-600">
+                        <span>Insights</span>
+                        <span>•</span>
+                        <span>4 min</span>
+                    </div>
+                </article>
+                
+                <hr class="border-t border-gray-300 mb-8">
+                
+                
+                <article class="mb-5 pb-4">
+                    <div class="mb-4">
+                        <img src="imagenes/imagen2journal.png" alt="Sustainability Impact Operational" class="w-full rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Sustainability Isn't a Side Project: Making Impact Operational
+                    </h3>
+                    <div class="flex items-center gap-3 text-sm text-gray-600">
+                        <span>Strategy</span>
+                        <span>•</span>
+                        <span>7 min</span>
+                    </div>
+                </article>
+                
+                <hr class="border-t border-gray-300 mb-8">
+                
+            
+                <article class="mb-5 pb-4">
+                    <div class="mb-4">
+                        <img src="imagenes/imagen3journal.png" alt="Aetherfield Model Data Into Action" class="w-full rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 ">
+                        Inside the Aetherfield Model: How We Turn Data Into Action
+                    </h3>
+                    <div class="flex items-center gap-3 text-sm text-gray-600">
+                        <span>Insights</span>
+                        <span>•</span>
+                        <span>5 min</span>
+                    </div>
+                </article>
+                
+                <hr class="border-t border-gray-300 mb-8">
+                
+                <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition-colors">View all articles</button>
+            </div>
+        </div>
+
+        <!-- Testimonial section -->
+        <div class="pb-16">
+            <div class="container mx-auto max-w-md">
+                
+                <div class="mb-8">
+                    <img src="imagenes/imagentestimonio.png" alt="Testimonial" class="w-full rounded-lg">
+                </div>
+                
+                
+                <img class="mb-6" src="imagenes/comillas.png" alt="comillas">
+                
+                
+                <div class="mb-8">
+                    <p class="text-2xl font-bold leading-tight mb-6">
+                        We finally moved past spreadsheets and guesswork. Now we have real data to guide real decisions.
+                    </p>
+                    
+                    <footer>
+                        <p class="font-semibold text-lg mb-1">Elliot Williams</p>
+                        <p class="text-gray-600">Head of Sustainability, Flux Materials</p>
+                    </footer>
+                </div>
+                
+                
+                
+                
+            </div>
+
+        </div>
+
+        <div class="m-auto bg-gray-100 p-10 pb-14 text-center w-full">
+            <h2 class="text-3xl font-bold mb-6">
+                Ready to operationalize your sustainability goals?
+            </h2>
+                        
+            <button class="bg-black text-white px-6 py-3 font-mono font-semibold hover:bg-gray-800 transition-colors">
+                • Request a demo
+            </button>
+        </div>
+
+        
+        
     </main>
+
+    
+    <!-- Footer -->
+    <footer class="bg-[#E8E548] px-6 py-12">
+        <div class="container mx-auto max-w-md">
+            <!-- Navigation Links -->
+            <nav class="text-center mb-6">
+                <a href="#" class="inline-block mx-3 font-semibold hover:underline">Product</a>
+                <a href="#" class="inline-block mx-3 font-semibold hover:underline">Journal</a>
+                <a href="#" class="inline-block mx-3 font-semibold hover:underline">About</a>
+                <a href="#" class="inline-block mx-3 font-semibold hover:underline">Careers</a>
+            </nav>
+            
+            <div class="text-center mb-6">
+                <a href="#" class="font-semibold hover:underline">Get started</a>
+            </div>
+            
+            <!-- Copyright -->
+            <p class="text-center text-sm mb-8">© 2025 · All rights reserved</p>
+            
+            <!-- Decorative Image -->
+            <div class="mb-8">
+                <img src="imagenes/imagenfooter.png" alt="Pattern" class="w-full rounded-lg">
+            </div>
+            
+            <!-- Logo -->
+            <div class="text-center">
+                <h2 class="text-5xl font-bold">Aetherfield</h2>
+            </div>
+        </div>
+    </footer>
 
     <script>
         const menuBtn = document.querySelector('#menuBtn');
@@ -216,27 +391,30 @@
         const getStartedBtn = document.querySelector('#getStartedBtn');
 
         menuBtn.addEventListener('click', () => {
-            menuOverlay.classList.add('active');
+            menuOverlay.classList.remove('-translate-y-full');
+            menuOverlay.classList.add('translate-y-0');
             menuBtn.style.transform = 'rotate(45deg)';
-            // Mostrar el botón Get started cuando se abre el menú
             getStartedBtn.classList.remove('hidden');
         });
 
         closeBtn.addEventListener('click', () => {
-            menuOverlay.classList.remove('active');
+            menuOverlay.classList.add('-translate-y-full');
+            menuOverlay.classList.remove('translate-y-0');
             menuBtn.style.transform = 'rotate(0deg)';
-            // Ocultar el botón Get started cuando se cierra el menú
             getStartedBtn.classList.add('hidden');
         });
 
         // Scroll effect para header
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
-                header.classList.add('scrolled');
+                header.classList.remove('bg-gradient-to-b', 'from-blue-200', 'to-gray-200');
+                header.classList.add('bg-white/80', 'backdrop-blur-md');
             } else {
-                header.classList.remove('scrolled');
+                header.classList.add('bg-gradient-to-b', 'from-blue-200', 'to-gray-200');
+                header.classList.remove('bg-white/80', 'backdrop-blur-md');
             }
         });
     </script>
 </body>
+
 </html>
