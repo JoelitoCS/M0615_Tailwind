@@ -38,7 +38,7 @@
     </script>
 </head>
 
-<body class="bg-white min-h-screen">
+<body class="bg-white min-h-screen overflow-x-hidden">
     
     <div id="menuOverlay"
         class="md:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl -translate-y-full transition-transform duration-400 ease-in-out">
@@ -67,13 +67,13 @@
     </div>
 
     
-    <header id="header" class="fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-blue-200 to-gray-200 transition-all duration-300">
-        <div class="container mx-auto max-w-7xl px-6 py-6">
+    <header id="header" class="fixed top-0 left-0 right-0 z-40 backdrop-blur-[80px] transition-all duration-300">
+        <div class="container mx-auto max-w-7xl px-6 py-4">
             <div class="flex justify-between items-center">
                 
                 <h1 class="text-2xl md:text-3xl font-bold">Aetherfield</h1>
                 
-               
+            
                 <nav class="hidden md:flex items-center gap-8">
                     <a href="#" class="font-semibold hover:text-gray-700 transition-colors">Product</a>
                     <a href="#" class="font-semibold hover:text-gray-700 transition-colors">Journal</a>
@@ -94,7 +94,7 @@
     
     <main>
         
-        <section class="bg-gradient-to-b from-blue-200 to-gray-200 px-6 pt-32 pb-16 md:pt-40 md:pb-24">
+        <section class="bg-gradient-to-b from-blue-200 to-[#F8F1E2] px-6 pt-32 pb-32 md:pt-40 md:pb-40 lg:pb-96">
             <div class="container mx-auto max-w-md md:max-w-4xl lg:max-w-6xl">
                 <div class="text-center mb-8 md:mb-12">
                     <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif mb-6 leading-tight opacity-0 animate-fade-in-up">
@@ -105,7 +105,6 @@
                         Track impact, reduce emissions, and accelerate progress—with clarity and confidence.
                     </p>
 
-                    
                     <div class="space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row items-center justify-center">
                         <button class="bg-black text-white px-6 py-3 font-medium opacity-0 animate-fade-in-up [animation-delay:200ms] hover:bg-gray-800 transition-colors">
                             • Request a demo
@@ -115,76 +114,75 @@
                         </button>
                     </div>
                 </div>
-
-                
-                <div class="mt-12 opacity-0 animate-fade-in-up [animation-delay:400ms]">
-                    <img src="imagenes/imagen1.png" alt="Dashboard preview" class="w-full rounded-lg shadow-xl ">
-                </div>
             </div>
         </section>
 
-        
-        <div class="bg-white px-6 py-16 md:py-24">
+        <!-- Imagen flotante entre secciones -->
+        <div class="relative -mt-32 md:-mt-40 mb-16 md:mb-24 px-6 z-10 lg:-mt-80">
+            <div class="container mx-auto max-w-md md:max-w-4xl lg:max-w-6xl">
+                <img src="imagenes/imagen1.png" alt="Dashboard preview" class="w-full rounded-lg animate-fade-in-up [animation-delay:400ms]">
+            </div>
+        </div>
+
+        <div class="bg-white px-6 py-16 md:py-24 lg:pb-72">
             <div class="container mx-auto max-w-md md:max-w-4xl lg:max-w-6xl">
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-12 md:mb-16 leading-tight opacity-0 animate-fade-in-up [animation-delay:500ms]">
                     Everything you need to measure, model, and act on sustainability
                 </h2>
 
+                <div class="lg:flex lg:gap-20 lg:h-[500px]">
+                    <div class="mb-16 md:mb-20 opacity-0 animate-fade-in-up [animation-delay:600ms]">
+                        <img src="imagenes/imagen2.png" alt="Energy consumption" class="w-full rounded-lg transition-shadow duration-300 lg:h-[650px]">
+                    </div>
+                    <div class="grid md:grid-cols-1 gap-4 md:gap-x-16 lg:grid-cols-1">
+                        <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:100ms] hover:border-gray-400 transition-colors">
+                            <div class="flex justify-between mb-2">
+                                <h3 class="text-[18px] font-bold">Track</h3>
+                                <span class="text-gray-400 text-sm">001</span>
+                            </div>
+                            <p class="text-[14px]">
+                                Emissions, energy, and waste across your value chain
+                            </p>
+                        </div>
+
+                        <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:200ms] hover:border-gray-400 transition-colors">
+                            <div class="flex justify-between mb-2">
+                                <h3 class="text-[18px] font-bold">Model</h3>
+                                <span class="text-gray-400 text-sm">002</span>
+                            </div>
+                            <p class="text-[14px] ">
+                                Forecast performance and goal alignment
+                            </p>
+                        </div>
+
+                        <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:300ms] hover:border-gray-400 transition-colors">
+                            <div class="flex justify-between mb-2">
+                                <h3 class="text-[18px] font-bold">Report</h3>
+                                <span class="text-gray-400 text-sm">003</span>
+                            </div>
+                            <p class="text-[14px]">
+                                Generate ESG disclosures, automate frameworks
+                            </p>
+                        </div>
+
+                        <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:400ms] hover:border-gray-400 transition-colors">
+                            <div class="flex justify-between mb-2">
+                                <h3 class="text-[18px] font-bold">Act</h3>
+                                <span class="text-gray-400 text-sm">004</span>
+                            </div>
+                            <p class="text-[14px] lg:mb-0.5">
+                                Surface insights and operational next steps
+                            </p>
+                        </div>
+
+                        <button class="bg-black text-white w-full md:px-12 md:w-full lg:w-[280px] lg:mb-[400px] lg:p-3 py-4 font-mono font-semibold hover:bg-gray-800 transition-colors mt-16 opacity-0 animate-fade-in-up [animation-delay:500ms] hover:shadow-lg">
+                            • Explore features
+                        </button>
+
+                    </div>
+                </div>
+            
                 
-                <div class="mb-16 md:mb-20 opacity-0 animate-fade-in-up [animation-delay:600ms]">
-                    <img src="imagenes/imagen2.png" alt="Energy consumption" class="w-full rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                </div>
-
-               
-                <div class="grid md:grid-cols-2 gap-12 md:gap-x-16">
-                    
-                    <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:100ms] hover:border-gray-400 transition-colors">
-                        <div class="flex justify-between items-baseline mb-4">
-                            <h3 class="text-2xl md:text-3xl font-bold">Track</h3>
-                            <span class="text-gray-400 text-sm">001</span>
-                        </div>
-                        <p class="text-lg md:text-xl leading-relaxed">
-                            Emissions, energy, and waste across your value chain
-                        </p>
-                    </div>
-
-                   
-                    <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:200ms] hover:border-gray-400 transition-colors">
-                        <div class="flex justify-between items-baseline mb-4">
-                            <h3 class="text-2xl md:text-3xl font-bold">Model</h3>
-                            <span class="text-gray-400 text-sm">002</span>
-                        </div>
-                        <p class="text-lg md:text-xl leading-relaxed">
-                            Forecast performance and goal alignment
-                        </p>
-                    </div>
-
-                    
-                    <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:300ms] hover:border-gray-400 transition-colors">
-                        <div class="flex justify-between items-baseline mb-4">
-                            <h3 class="text-2xl md:text-3xl font-bold">Report</h3>
-                            <span class="text-gray-400 text-sm">003</span>
-                        </div>
-                        <p class="text-lg md:text-xl leading-relaxed">
-                            Generate ESG disclosures, automate frameworks
-                        </p>
-                    </div>
-
-                    
-                    <div class="pb-12 border-b border-gray-200 opacity-0 animate-fade-in-up [animation-delay:400ms] hover:border-gray-400 transition-colors">
-                        <div class="flex justify-between items-baseline mb-4">
-                            <h3 class="text-2xl md:text-3xl font-bold">Act</h3>
-                            <span class="text-gray-400 text-sm">004</span>
-                        </div>
-                        <p class="text-lg md:text-xl leading-relaxed">
-                            Surface insights and operational next steps
-                        </p>
-                    </div>
-                </div>
-
-                <button class="bg-black text-white w-full md:w-auto md:px-12 py-4 font-mono font-semibold hover:bg-gray-800 transition-colors mt-16 opacity-0 animate-fade-in-up [animation-delay:500ms] hover:shadow-lg">
-                    • Explore features
-                </button>
             </div>
         </div>
 
@@ -199,7 +197,7 @@
                 </h2>
 
                 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid md:flex md:flex-col md:w-full lg:grid lg:grid-cols-3 gap-6">
                     <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300">
                         <div class="mb-6">
                             <img src="imagenes/iconoHome1.png" alt="icono1" class="w-16 h-16">
@@ -234,85 +232,94 @@
         </div>
 
         
-        <div class="pb-20 px-6">
-            <div class="p-5 bg-[#F6F8FB] rounded-2xl mx-auto max-w-md">
-                <img class="w-full rounded-lg" src="imagenes/imagenStudyHome.png" alt="Study">
-                <div class="mt-5">
-                    <h3 class="text-xl font-semibold mb-3">Why Acme Inc chose Aetherfield</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        With fragmented data and growing reporting pressure, Acme turned to Aetherfield to streamline their ESG workflows. The result? Faster decisions, fewer spreadsheets, and 34% more coverage.
-                    </p>
-                    <button class="mt-8 bg-black text-white p-3 hover:bg-gray-800 transition-colors w-full text-center text-sm font-mono font-semibold">
-                        Read case study
-                    </button>
+        <div class="pb-20 px-6 w-full">
+            <div class="bg-[#F6F8FB] rounded-2xl m-auto max-w-md lg:max-w-7xl overflow-hidden p-5">
+                <div class="lg:flex lg:items-center">
+                    
+                    <div class="lg:w-1/2">
+                        <img class="w-full h-full object-cover" src="imagenes/imagenStudyHome.png" alt="Study">
+                    </div>
+                    
+                    
+                    <div class="p-8 lg:w-1/2 lg:p-8">
+                        <h3 class="text-2xl font-bold mb-4">Why Acme Inc chose Aetherfield</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            With fragmented data and growing reporting pressure, Acme turned to Aetherfield to streamline their ESG workflows. The result? Faster decisions, fewer spreadsheets, and 34% more coverage.
+                        </p>
+                        <button class="bg-black text-white px-6 py-3 hover:bg-gray-800 transition-colors text-sm font-mono font-semibold">
+                            Read case study
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
         
-        <div class="px-6 pb-20">
+        <div class="px-6 pb-20 w-full">
             <div class="container mx-auto max-w-md md:max-w-4xl lg:max-w-6xl">
                 <h2 class="text-4xl md:text-5xl font-bold text-center mb-8">From the journal</h2>
+
                 <hr class="border-t border-gray-300 mb-8 md:mb-12">
-            
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="group">
-                        <div class="mb-4 overflow-hidden rounded-lg">
-                            <img src="imagenes/imagen1journal.png" alt="Climate-Ready Data Stack" class="w-full rounded-lg group-hover:scale-105 transition-transform duration-300">
+
+                <!-- Layout para móvil (grid) y desktop (lista) -->
+                <div class="grid lg:grid-cols-1 gap-8">
+                    <article class="group md:flex md:items-start md:gap-6 pb-8 lg:flex lg:items-start lg:gap-6 border-b border-gray-300">
+                        <div class="mb-4 lg:mb-0 overflow-hidden rounded-lg w-full md:w-48 aspect-[4/3]">
+                            <img src="imagenes/imagen1journal.png" alt="Climate-Ready Data Stack" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">
-                            How to Build a Climate-Ready Data Stack
-                        </h3>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <span>Insights</span>
-                            <span>•</span>
-                            <span>4 min</span>
+                        <div class="lg:flex-1">
+                            <h3 class="text-xl font-semibold mb-2">
+                                How to Build a Climate-Ready Data Stack
+                            </h3>
+                            <div class="flex items-center gap-3 text-sm text-gray-600">
+                                <span>Insights</span>
+                                <span>•</span>
+                                <span>4 min</span>
+                            </div>
                         </div>
                     </article>
 
-                    <hr class="bg-gray-700">
-                    
-                    <article class="group">
-                        <div class="mb-4 overflow-hidden rounded-lg">
-                            <img src="imagenes/imagen2journal.png" alt="Sustainability Impact Operational" class="w-full rounded-lg group-hover:scale-105 transition-transform duration-300">
+                    <article class="group md:flex md:items-start md:gap-6 pb-8 lg:flex lg:items-start lg:gap-6 border-b border-gray-300">
+                        <div class="mb-4 lg:mb-0 overflow-hidden rounded-lg w-full md:w-48 aspect-[4/3]">
+                            <img src="imagenes/imagen2journal.png" alt="Sustainability Impact Operational" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">
-                            Sustainability Isn't a Side Project: Making Impact Operational
-                        </h3>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <span>Strategy</span>
-                            <span>•</span>
-                            <span>7 min</span>
+                        <div class="lg:flex-1">
+                            <h3 class="text-xl font-semibold mb-2">
+                                Sustainability Isn't a Side Project: Making Impact Operational
+                            </h3>
+                            <div class="flex items-center gap-3 text-sm text-gray-600">
+                                <span>Strategy</span>
+                                <span>•</span>
+                                <span>7 min</span>
+                            </div>
                         </div>
                     </article>
 
-                    <hr class="bg-gray-700">
-                    
-                    <article class="group">
-                        <div class="mb-4 overflow-hidden rounded-lg">
-                            <img src="imagenes/imagen3journal.png" alt="Aetherfield Model Data Into Action" class="w-full rounded-lg group-hover:scale-105 transition-transform duration-300">
+                    <article class="group md:flex md:items-start md:gap-6 pb-8 lg:flex lg:items-start lg:gap-6 border-b border-gray-300">
+                        <div class="mb-4 lg:mb-0 overflow-hidden rounded-lg w-full md:w-48 aspect-[4/3]">
+                            <img src="imagenes/imagen3journal.png" alt="Aetherfield Model Data Into Action" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">
-                            Inside the Aetherfield Model: How We Turn Data Into Action
-                        </h3>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <span>Insights</span>
-                            <span>•</span>
-                            <span>5 min</span>
+                        <div class="lg:flex-1">
+                            <h3 class="text-xl font-semibold mb-2">
+                                Inside the Aetherfield Model: How We Turn Data Into Action
+                            </h3>
+                            <div class="flex items-center gap-3 text-sm text-gray-600">
+                                <span>Insights</span>
+                                <span>•</span>
+                                <span>5 min</span>
+                            </div>
                         </div>
                     </article>
                 </div>
-                
-                <hr class="border-t bg-gray-700 my-12">
-                
-                <div class="text-center">
-                    <button class="bg-black text-white px-12 py-4 font-mono font-semibold hover:bg-gray-800 transition-colors">
+
+                <div class="text-center mt-12">
+                    <button class="bg-black text-white w-full lg:w-[200px] md:w-[200px] py-2 font-mono font-semibold hover:bg-gray-800 transition-colors">
                         View all articles
                     </button>
                 </div>
             </div>
         </div>
+
 
         <!-- Testimonial section -->
         <div class="pb-16 px-6">
