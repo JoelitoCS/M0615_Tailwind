@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at Aetherfield - Sustainability Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Instrument Serif', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease forwards',
+                        'slide-down': 'slideDown 0.4s ease forwards',
+                        'slide-up': 'slideUp 0.4s ease forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(-100%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white min-h-screen overflow-x-hidden">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay"
+        class="md:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl -translate-y-full transition-transform duration-400 ease-in-out">
+        <div class="flex flex-col">
+            <!-- Menu Header -->
+            <div class="flex justify-between items-center px-6 py-5 border-b border-gray-200">
+                <h2 class="text-xl font-bold">Aetherfield</h2>
+                <button id="closeBtn" class="text-3xl font-light hover:text-gray-600 transition-colors">×</button>
+            </div>
+
+            <!-- Menu Items -->
+            <nav>
+                <a href="../index.html" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Product</a>
+                <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Journal</a>
+                <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">About</a>
+                <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Careers</a>
+            </nav>
+
+            <!-- Get Started Button -->
+            <div class="px-6 py-5">
+                <button class="bg-black text-white w-full py-4 font-mono font-semibold hover:bg-gray-800 transition-colors">
+                    Get started
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-40 backdrop-blur-[80px] transition-all duration-300">
+        <div class="container mx-auto max-w-7xl px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <h1 class="text-2xl md:text-3xl font-bold">Aetherfield</h1>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="../index.html" class="font-semibold hover:text-gray-700 transition-colors">Product</a>
+                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors">Journal</a>
+                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors">About</a>
+                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors">Careers</a>
+                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors flex items-center gap-1">
+                        Get started
+                        <span>→</span>
+                    </a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-4xl font-light transform rotate-0 transition-transform duration-300 hover:scale-110">+</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="bg-gradient-to-b from-blue-200 to-[#F8F1E2]">
+        <!-- Hero Section -->
+        <div class="pt-32 pb-20 px-6 text-center">
+            <div class="container mx-auto max-w-7xl">
+                <h2 class="text-2xl md:text-3xl font-serif mb-2">Careers at</h2>
+                <h1 class="text-6xl md:text-8xl font-serif font-bold">Aetherfield</h1>
+            </div>
+        </div>
+
+        <!-- Job Listings Section -->
+        <div class="pb-20 px-6">
+            <div class="container mx-auto max-w-4xl">
+                <div class="space-y-6">
+                    
+                    <!-- UX Designer Card -->
+                    <div class="bg-white rounded-3xl p-8 shadow-sm">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2">UX Designer</h3>
+                        <p class="text-gray-600 text-sm mb-6">Contract · San Francisco, CA</p>
+                        
+                        <p class="text-lg leading-relaxed mb-6 font-serif">
+                            Shape the tools that drive climate intelligence. You'll lead cross-functional teams to build thoughtful, scalable solutions for sustainability-forward organizations.
+                        </p>
+                        
+                        <button class="bg-black text-white px-6 py-3 font-mono font-semibold hover:bg-gray-800 transition-colors">
+                            View role
+                        </button>
+                    </div>
+
+                    <!-- Data Scientist Card -->
+                    <div class="bg-white rounded-3xl p-8 shadow-sm">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Data Scientist</h3>
+                        <p class="text-gray-600 text-sm mb-6">Full-time · Denver, CO</p>
+                        
+                        <p class="text-lg leading-relaxed mb-6 font-serif">
+                            Help build the intelligence layer for climate action. You'll turn complex sustainability data into clear, actionable insights for enterprise teams.
+                        </p>
+                        
+                        <button class="bg-black text-white px-6 py-3 font-mono font-semibold hover:bg-gray-800 transition-colors">
+                            View role
+                        </button>
+                    </div>
+
+                    <!-- Product Manager Card -->
+                    <div class="bg-white rounded-3xl p-8 shadow-sm">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Product Manager</h3>
+                        <p class="text-gray-600 text-sm mb-6">Part-time · Seattle, WA</p>
+                        
+                        <p class="text-lg leading-relaxed mb-6 font-serif">
+                            Shape the tools that drive climate intelligence. You'll lead cross-functional teams to build thoughtful, scalable solutions for sustainability-forward organizations.
+                        </p>
+                        
+                        <button class="bg-black text-white px-6 py-3 font-mono font-semibold hover:bg-gray-800 transition-colors">
+                            View role
+                        </button>
+                    </div>
+
+                    <!-- Open Application Card -->
+                    <div class="rounded-3xl p-8 shadow-sm border-2 border-dashed border-black-300">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Open application</h3>
+                        <p class="text-gray-600 text-sm mb-6">Full-time · Denver, CO</p>
+                        
+                        <p class="text-lg leading-relaxed mb-6 font-serif">
+                            Don't see your role available? Apply for an open application!
+                        </p>
+                        
+                        <button class="bg-black text-white px-6 py-3 font-mono font-semibold hover:bg-gray-800 transition-colors">
+                            Apply now
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#E8E548] px-6 py-12 md:py-16">
+        <div class="container mx-auto max-w-md md:max-w-6xl">
+            <!-- Navigation Links -->
+            <nav class="text-center mb-6">
+                <a href="#" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Product</a>
+                <a href="#" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Journal</a>
+                <a href="#" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">About</a>
+                <a href="#" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Careers</a>
+            </nav>
+            
+            <div class="text-center mb-6">
+                <a href="#" class="font-semibold hover:underline">Get started</a>
+            </div>
+            
+            
+            <p class="text-center text-sm mb-8">© 2025 · All rights reserved</p>
+            
+            
+            <div class="mb-8 max-w-2xl mx-auto">
+                <img src="../imagenes/imagenfooter.png" alt="Pattern" class="w-full rounded-lg">
+            </div>
+            
+            
+            <div class="text-center">
+                <h2 class="text-7xl md:text-8xl lg:text-9xl font-bold">Aetherfield</h2>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        menuBtn.addEventListener('click', () => {
+            menuOverlay.classList.remove('-translate-y-full');
+            menuBtn.style.transform = 'rotate(45deg)';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            menuOverlay.classList.add('-translate-y-full');
+            menuBtn.style.transform = 'rotate(0deg)';
+        });
+    </script>
+</body>
+</html>
