@@ -4,225 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers at Aetherfield - Sustainability Insights</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'serif': ['Instrument Serif', 'serif'],
+                        serif: ['Instrument Serif', 'serif'],
                     },
                     animation: {
                         'fade-in-up': 'fadeInUp 0.8s ease forwards',
-                        'slide-down': 'slideDown 0.4s ease forwards',
-                        'slide-up': 'slideUp 0.4s ease forwards',
                     },
                     keyframes: {
                         fadeInUp: {
                             '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' }
                         },
-                        slideDown: {
-                            '0%': { transform: 'translateY(-100%)' },
-                            '100%': { transform: 'translateY(0)' }
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(0)' },
-                            '100%': { transform: 'translateY(-100%)' }
-                        }
                     }
                 }
             }
         }
     </script>
 </head>
+
 <body class="bg-white min-h-screen overflow-x-hidden">
 
-    <div id="menuOverlay"
-        class="md:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl -translate-y-full transition-transform duration-400 ease-in-out">
-        <div class="flex flex-col">
-            
-            <div class="flex justify-between items-center px-6 py-5 border-b border-gray-200">
-                <h2 class="text-xl font-bold">Aetherfield</h2>
-                <button id="closeBtn" class="text-3xl font-light hover:text-gray-600 transition-colors">×</button>
-            </div>
+<!-- Mobile Menu -->
+<div id="menuOverlay"
+     class="md:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl
+            -translate-y-full transition-transform duration-400 ease-in-out">
+    <div class="flex flex-col">
 
-            
-            <nav>
-                <a href="../index.html" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Product</a>
-                <a href="../journal/journal.html" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Journal</a>
-                <a href="../about/about.html" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">About</a>
-                <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50 transition-colors">Careers</a>
-            </nav>
+        <div class="flex justify-between items-center px-6 py-5 border-b border-gray-200">
+            <h2 class="text-xl font-bold">Aetherfield</h2>
+            <button id="closeBtn" class="text-3xl font-light hover:text-gray-600 transition-colors">×</button>
+        </div>
 
-            
-            <div class="px-6 py-5">
-                <button class="bg-black text-white px-4 py-2 font-mono font-semibold hover:text-gray-400 hover:shadow-lg transition-all duration-500">
-                    Get started
-                </button>
-            </div>
+        <nav>
+            <a href="../index.html" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50">Product</a>
+            <a href="../journal/journal.html" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50">Journal</a>
+            <a href="../about/about.html" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50">About</a>
+            <a href="#" class="block px-6 py-4 text-lg font-semibold border-b border-gray-200 hover:bg-gray-50">Careers</a>
+        </nav>
+
+        <div class="px-6 py-5">
+            <button class="bg-black text-white px-4 py-2 font-mono font-semibold hover:text-gray-400 hover:shadow-lg transition-all duration-500">
+                Get started
+            </button>
         </div>
     </div>
+</div>
 
-    <!-- Header -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-40 backdrop-blur-[80px] transition-all duration-300">
-        <div class="container mx-auto max-w-7xl px-6 py-4">
-            <div class="flex justify-between items-center">
-                
-                <h1 class="text-2xl md:text-3xl font-bold"><a href="../index.html">Aetherfield</a></h1>
-                
-                
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="../index.html" class="font-semibold hover:text-gray-700 transition-colors">Product</a>
-                    <a href="../journal/journal.html" class="font-semibold hover:text-gray-700 transition-colors">Journal</a>
-                    <a href="../about/about.html" class="font-semibold hover:text-gray-700 transition-colors">About</a>
-                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors">Careers</a>
-                    <a href="#" class="font-semibold hover:text-gray-700 transition-colors flex items-center gap-1">
-                        Get started
-                        <span>→</span>
-                    </a>
-                </nav>
-                
-                
-                <button id="menuBtn" class="md:hidden text-4xl font-light transform rotate-0 transition-transform duration-300 hover:scale-110">+</button>
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 z-40 backdrop-blur-[80px]">
+    <div class="container mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl md:text-3xl font-bold">
+            <a href="../index.html">Aetherfield</a>
+        </h1>
+
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="../index.html" class="font-semibold hover:text-gray-700">Product</a>
+            <a href="../journal/journal.html" class="font-semibold hover:text-gray-700">Journal</a>
+            <a href="../about/about.html" class="font-semibold hover:text-gray-700">About</a>
+            <a href="#" class="font-semibold hover:text-gray-700">Careers</a>
+            <a href="#" class="font-semibold flex items-center gap-1 hover:text-gray-700">
+                Get started →
+            </a>
+        </nav>
+
+        <button id="menuBtn" class="md:hidden text-4xl font-light">+</button>
+    </div>
+</header>
+
+<main class="bg-gradient-to-b from-blue-200 to-[#F8F1E2] pt-32">
+
+    <!-- Hero -->
+    <section class="text-center px-6 pb-20 opacity-0 animate-fade-in-up">
+        <h2 class="text-5xl md:text-6xl font-serif mb-2">Careers at</h2>
+        <h1 class="text-7xl md:text-8xl font-serif font-bold">Aetherfield</h1>
+    </section>
+
+    <!-- Jobs -->
+    <section class="pb-20 px-6">
+        <div class="container mx-auto max-w-4xl space-y-6">
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm opacity-0 animate-fade-in-up">
+                <h3 class="text-2xl md:text-3xl font-bold mb-2">UX Designer</h3>
+                <p class="text-gray-600 text-sm mb-6">Contract · San Francisco, CA</p>
+                <p class="text-lg leading-relaxed mb-6 font-serif">
+                    Shape the tools that drive climate intelligence.
+                </p>
+                <a href="careers1.html" class="bg-black text-white px-4 py-2 font-mono font-semibold inline-block hover:text-gray-400 transition">
+                    View role
+                </a>
             </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm opacity-0 animate-fade-in-up [animation-delay:150ms]">
+                <h3 class="text-2xl md:text-3xl font-bold mb-2">Data Scientist</h3>
+                <p class="text-gray-600 text-sm mb-6">Full-time · Denver, CO</p>
+                <p class="text-lg leading-relaxed mb-6 font-serif">
+                    Turn complex sustainability data into insights.
+                </p>
+                <a href="careers2.html" class="bg-black text-white px-4 py-2 font-mono font-semibold inline-block hover:text-gray-400 transition">
+                    View role
+                </a>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm opacity-0 animate-fade-in-up [animation-delay:300ms]">
+                <h3 class="text-2xl md:text-3xl font-bold mb-2">Product Manager</h3>
+                <p class="text-gray-600 text-sm mb-6">Part-time · Seattle, WA</p>
+                <p class="text-lg leading-relaxed mb-6 font-serif">
+                    Lead scalable sustainability products.
+                </p>
+                <a href="careers3.html" class="bg-black text-white px-4 py-2 font-mono font-semibold inline-block hover:text-gray-400 transition">
+                    View role
+                </a>
+            </div>
+
+            <div class="rounded-3xl p-8 shadow-sm border-2 border-dashed border-black opacity-0 animate-fade-in-up [animation-delay:450ms]">
+                <h3 class="text-2xl md:text-3xl font-bold mb-2">Open application</h3>
+                <p class="text-gray-600 text-sm mb-6">Various locations</p>
+                <p class="text-lg leading-relaxed mb-6 font-serif">
+                    Don’t see your role? Apply anyway.
+                </p>
+                <button class="bg-black text-white px-4 py-2 font-mono font-semibold hover:text-gray-400 transition">
+                    Apply now
+                </button>
+            </div>
+
         </div>
-    </header>
+    </section>
+</main>
 
-    <!-- Main -->
-    <main class="bg-gradient-to-b from-blue-200 to-[#F8F1E2]">
-        
-        <div class="pt-32 pb-20 px-6 text-center">
-            <div class="container mx-auto max-w-7xl">
-                <h2 class="text-5xl md:text-6xl font-serif mb-2">Careers at</h2>
-                <h1 class="text-7xl md:text-8xlxl font-serif font-bold">Aetherfield</h1>
-            </div>
-        </div>
+<footer class="bg-[#E8E548] py-12 text-center text-[#66640f]">
+    © 2025 · All rights reserved
+</footer>
 
-        
-        <div class="pb-20 px-6">
-            <div class="container mx-auto max-w-4xl">
-                <div class="space-y-6">
-                    
-                    
-                    <div class="bg-white rounded-3xl p-8 shadow-sm">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-2">UX Designer</h3>
-                        <p class="text-gray-600 text-sm mb-6">Contract · San Francisco, CA</p>
-                        
-                        <p class="text-lg leading-relaxed mb-6 font-serif">
-                            Shape the tools that drive climate intelligence. You'll lead cross-functional teams to build thoughtful, scalable solutions for sustainability-forward organizations.
-                        </p>
-                        
-                        <button class="bg-black text-white px-4 py-2 font-mono font-semibold hover:text-gray-400 hover:shadow-lg transition-all duration-500">
-                            
-                            <a href="careers1.html">View role</a>
-                            
-                        </button>
-                    </div>
+<script>
+    const menuBtn = document.querySelector('#menuBtn');
+    const closeBtn = document.querySelector('#closeBtn');
+    const menuOverlay = document.querySelector('#menuOverlay');
 
-                    
-                    <div class="bg-white rounded-3xl p-8 shadow-sm">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Data Scientist</h3>
-                        <p class="text-gray-600 text-sm mb-6">Full-time · Denver, CO</p>
-                        
-                        <p class="text-lg leading-relaxed mb-6 font-serif">
-                            Help build the intelligence layer for climate action. You'll turn complex sustainability data into clear, actionable insights for enterprise teams.
-                        </p>
-                        
-                        <button class="bg-black text-white px-4 py-2 font-mono font-semibold hover:text-gray-400 hover:shadow-lg transition-all duration-500">
-                            
-                            <a href="careers2.html">View role</a>
+    menuBtn?.addEventListener('click', () => {
+        menuOverlay.classList.remove('-translate-y-full');
+        menuOverlay.classList.add('translate-y-0');
+        menuBtn.style.transform = 'rotate(45deg)';
+    });
 
-                        </button>
-                    </div>
+    closeBtn?.addEventListener('click', () => {
+        menuOverlay.classList.add('-translate-y-full');
+        menuOverlay.classList.remove('translate-y-0');
+        menuBtn.style.transform = 'rotate(0deg)';
+    });
+</script>
 
-                    
-                    <div class="bg-white rounded-3xl p-8 shadow-sm">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Product Manager</h3>
-                        <p class="text-gray-600 text-sm mb-6">Part-time · Seattle, WA</p>
-                        
-                        <p class="text-lg leading-relaxed mb-6 font-serif">
-                            Shape the tools that drive climate intelligence. You'll lead cross-functional teams to build thoughtful, scalable solutions for sustainability-forward organizations.
-                        </p>
-                        
-                        <button class="bg-black text-white px-4 py-2 font-mono font-semibold hover:text-gray-400 hover:shadow-lg transition-all duration-500">
-                            
-                            <a href="careers3.html">View role</a>
-
-                        </button>
-                    </div>
-
-                    
-                    <div class="rounded-3xl p-8 shadow-sm border-2 border-dashed border-black">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Open application</h3>
-                        <p class="text-gray-600 text-sm mb-6">Full-time · Denver, CO</p>
-                        
-                        <p class="text-lg leading-relaxed mb-6 font-serif">
-                            Don't see your role available? Apply for an open application!
-                        </p>
-                        
-                        <button class="bg-black text-white px-4 py-2 font-mono font-semibold hover:text-gray-400 hover:shadow-lg transition-all duration-500">
-                            Apply now
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-[#E8E548] py-12 md:py-16 overflow-x-hidden">
-        <div class="w-full">
-            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6 px-6">
-                <nav class="text-center lg:text-start text-[#66640f] mb-4 lg:mb-0 lg:ml-0">
-                    <a href="../index.html" class="inline-block mx-2 md:mx-3 lg:mx-0 lg:mr-4 font-semibold hover:underline text-sm lg:text-[20px]">Product</a>
-                    <a href="../journal/journal.html" class="inline-block mx-2 md:mx-3 lg:mx-4 font-semibold hover:underline text-sm lg:text-[20px]">Journal</a>
-                    <a href="../about/about.html" class="inline-block mx-2 md:mx-3 lg:mx-4 font-semibold hover:underline text-sm lg:text-[20px]">About</a>
-                    <a href="#" class="inline-block mx-2 md:mx-3 lg:mx-4 font-semibold hover:underline text-sm lg:text-[20px]">Careers</a>
-                    <a href="#" class="inline-block mx-2 md:mx-3 lg:mx-4 font-semibold hover:underline text-sm lg:text-[20px]">Get started</a>
-                </nav>
-                
-                <p class="text-center lg:text-right font-serif text-[#66640f] text-sm lg:text-[20px] lg:mr-0">© 2025 · All rights reserved</p>
-            </div>
-            
-            <div class="mb-8 px-6 lg:px-6">
-                <img src="../imagenes/imagenfooter.png" alt="Pattern" class="w-full lg:h-[500px] object-cover">
-            </div>
-            
-            <div class="text-center overflow-hidden px-6">
-                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-[330px] font-bold text-[#66640f] break-words">Aetherfield</h2>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const menuBtn = document.querySelector('#menuBtn');
-        const closeBtn = document.querySelector('#closeBtn');
-        const menuOverlay = document.querySelector('#menuOverlay');
-        const header = document.querySelector('header');
-
-        // Mobile menu toggle
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                menuOverlay.classList.remove('-translate-y-full');
-                menuOverlay.classList.add('translate-y-0');
-                menuBtn.style.transform = 'rotate(45deg)';
-            });
-        }
-
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                menuOverlay.classList.add('-translate-y-full');
-                menuOverlay.classList.remove('translate-y-0');
-                menuBtn.style.transform = 'rotate(0deg)';
-            });
-        }
-
-    </script>
 </body>
 </html>
