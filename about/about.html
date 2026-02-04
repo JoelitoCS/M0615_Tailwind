@@ -42,7 +42,7 @@
         }
     </script>
 </head>
-<body>
+<body class="overflow-x-hidden">
     <div id="menuOverlay"
         class="md:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-2xl -translate-y-full transition-transform duration-400 ease-in-out">
         <div class="flex flex-col">
@@ -97,39 +97,185 @@
     <!-- Main -->
 
     <main>
-        <div class="bg-gradient-to-b from-blue-300 to-[#F8F1E2] px-3 py-3 ">
-
+        <!-- Hero Section with Card -->
+        <div class="bg-gradient-to-b from-blue-300 to-[#F8F1E2] px-3 py-40 min-h-[450px]">
+            <div class="bg-white p-2 rounded-md w-full max-w-[340px] h-auto mx-auto flex gap-x-2 shadow-xl">
+                <img src="../imagenes/imagen2journal.png" class="rounded-lg w-[100px] h-[100px] object-cover flex-shrink-0" alt="imagenjournal2">
+                <div class="flex flex-col py-2 space-y-2 flex-1 min-w-0">
+                    <span class="bg-green-400 px-2 py-1 rounded-xl font-mono text-[#949221] w-fit text-xs">Forecast</span>
+                    <h2 class="font-semibold text-[15px] leading-5">You're 16% off your 2027 emissions goal</h2>
+                    <p><a class="font-mono text-[12px]" href="#">Adjust your targets →</a></p>
+                </div>
+            </div>
         </div>
 
+        <!-- Mission Section -->
+        <div class="px-4 py-6 flex flex-col min-h-[300px]">
+            <h3 class="font-serif text-gray-500 tracking-[1px] mb-4">Our mission</h3>
+            <h2 class="text-start text-[24px] font-bold tracking-tight leading-7 flex-1">Climate action starts with better information. We help organizations turn complex data into measurable, meaningful change.</h2>
+            <button class="bg-black text-white px-4 py-2 font-mono font-semibold hover:text-gray-400 hover:shadow-lg transition-all duration-500">
+                · Meet the team
+            </button>
+        </div>
 
+        <!-- Our Values Section -->
+        <div class="px-4 py-8 bg-white">
+            <h2 class="text-center text-[24px] font-bold mb-8">Our values</h2>
+            
+            <!-- Value 1: Clarity drives action -->
+            <div class="bg-[#F5F5F5] px-4 py-6 rounded-lg mb-4">
+                <div class="mb-3">
+                    <img src="../imagenes/iconoHome1.png" alt="1" class="w-10 h-10">
+                </div>
+                <h3 class="text-[18px] font-bold mb-2">Clarity drives action</h3>
+                <p class="text-gray-700 leading-6">We believe better decisions start with better data—measured, visible, and trusted.</p>
+            </div>
+
+            <!-- Value 2: Sustainability is a systems problem -->
+            <div class="bg-[#F5F5F5] px-4 py-6 rounded-lg mb-4">
+                <div class="mb-3">
+                    <img src="../imagenes/iconoHome2.png" alt="2" class="w-10 h-10">
+                </div>
+                <h3 class="text-[18px] font-bold mb-2">Sustainability is a systems problem</h3>
+                <p class="text-gray-700 leading-6">We build tools that help teams connect the dots between operations, impact, and accountability.</p>
+            </div>
+
+            <!-- Value 3: Progress over perfection -->
+            <div class="bg-[#F5F5F5] px-4 py-6 rounded-lg">
+                <div class="mb-3">
+                    <img src="../imagenes/iconoHome3.png" alt="3" class="w-10 h-10">
+                </div>
+                <h3 class="text-[18px] font-bold mb-2">Progress over perfection</h3>
+                <p class="text-gray-700 leading-6">We support real-world momentum—helping organizations move from ambition to measurable change.</p>
+            </div>
+        </div>
+
+        <!-- Founder's Story Section -->
+        <div class="px-4 py-8">
+            <div class="mb-6">
+                <img src="../imagenes/imagenAbout.png" class="w-full h-auto mb-4" alt="Eunji Park">
+            </div>
+            <div class="px-4">
+                <h3 class="font-serif text-gray-500 tracking-[1px] mb-2">Founder's story</h3>
+                <h2 class="text-[28px] font-bold mb-4">Eunji Park</h2>
+                <p class="text-gray-700 leading-6">Eunji founded Aetherfield with one goal: to help companies drive climate action without waiting for a perfect plan. With a background in environmental systems and software design, she's spent the past decade building tools that turn impact goals into real-world outcomes. She's all about making the invisible, visible to every investor, customer, and employee.</p>
+            </div>
+        </div>
+
+        <!-- Meet the Team Section -->
+        <div class="px-4 py-8 bg-white">
+            <h2 class="text-[28px] font-bold mb-8">Meet the team</h2>
+            
+            <!-- Team Members -->
+            <div class="space-y-6">
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Eunji Park</h3>
+                    <p class="text-gray-600 mb-1">Founder</p>
+                    <a href="mailto:e.park@aetherfield.com" class="text-[14px] text-gray-800 break-all">e.park@aetherfield.com</a>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Al Gorithm</h3>
+                    <p class="text-gray-600 mb-1">Senior Systems Architect</p>
+                    <a href="mailto:a.gorithm@aetherfield.com" class="text-[14px] text-gray-800 break-all">a.gorithm@aetherfield.com</a>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Cassandra Query</h3>
+                    <p class="text-gray-600 mb-1">Head of Data Platforms</p>
+                    <a href="mailto:c.query@aetherfield.com" class="text-[14px] text-gray-800 break-all">c.query@aetherfield.com</a>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Sue Logic</h3>
+                    <p class="text-gray-600 mb-1">Principal Software Engineer</p>
+                    <a href="mailto:s.logic@aetherfield.com" class="text-[14px] text-gray-800 break-all">s.logic@aetherfield.com</a>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Dash Bordman</h3>
+                    <p class="text-gray-600 mb-1">Product Manager</p>
+                    <a href="mailto:d.bordman@aetherfield.com" class="text-[14px] text-gray-800 break-all">d.bordman@aetherfield.com</a>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Greta Watt</h3>
+                    <p class="text-gray-600 mb-1">Director of Climate Strategy</p>
+                    <a href="mailto:g.watt@aetherfield.com" class="text-[14px] text-gray-800 break-all">g.watt@aetherfield.com</a>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Gail Force</h3>
+                    <p class="text-gray-600 mb-1">Environmental Risk Analyst</p>
+                    <a href="mailto:g.force@aetherfield.com" class="text-[14px] text-gray-800 break-all">g.force@aetherfield.com</a>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Polly Nation</h3>
+                    <p class="text-gray-600 mb-1">UX Designer</p>
+                    <a href="mailto:p.nation@aetherfield.com" class="text-[14px] text-gray-800 break-all">p.nation@aetherfield.com</a>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Will O'Watt</h3>
+                    <p class="text-gray-600 mb-1">Clean Energy Solutions Manager</p>
+                    <a href="mailto:w.owatt@aetherfield.com" class="text-[14px] text-gray-800 break-all">w.owatt@aetherfield.com</a>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Lana Terra</h3>
+                    <p class="text-gray-600 mb-1">Earth Systems Research</p>
+                    <a href="mailto:l.terra@aetherfield.com" class="text-[14px] text-gray-800 break-all">l.terra@aetherfield.com</a>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-[18px] font-bold">Ella Vation</h3>
+                    <p class="text-gray-600 mb-1">Earth Systems Researcher</p>
+                    <a href="mailto:e.vation@aetherfield.com" class="text-[14px] text-gray-800 break-all">e.vation@aetherfield.com</a>
+                </div>
+
+                <div class="pb-4">
+                    <h3 class="text-[18px] font-bold">Phil Scope</h3>
+                    <p class="text-gray-600 mb-1">Lifecycle Assessment Lead</p>
+                    <a href="mailto:p.scope@aetherfield.com" class="text-[14px] text-gray-800 break-all">p.scope@aetherfield.com</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hiring CTA Section -->
+        <div class="px-4 py-12 text-center bg-[#F8F1E2]">
+            <h2 class="text-[24px] font-bold mb-6">We're hiring! Want to join the team?</h2>
+            <button class="bg-black text-white px-6 py-3 font-mono font-semibold hover:text-gray-400 hover:shadow-lg transition-all duration-500">
+                · View open roles
+            </button>
+        </div>
     </main>
 
     <!-- Footer -->
     <footer class="bg-[#E8E548] px-6 py-12 md:py-16">
         <div class="container mx-auto max-w-md md:max-w-6xl">
+            <div class="text-center flex">
+                <nav class="text-center mb-6 lg:text-start text-[#66640f]">
+                    <a href="../index.html" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Product</a>
+                    <a href="../journal/journal.html" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Journal</a>
+                    <a href="#" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">About</a>
+                    <a href="../careers/careers.html" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Careers</a>
+                    <a href="#" class="font-semibold hover:underline">Get started</a>
+                </nav>
+                
+                <p class="text-center font-serif mb-8 text-[#66640f] lg:ml-[540px]">© 2025 · All rights reserved</p>
             
-            <nav class="text-center mb-6">
-                <a href="../index.html" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Product</a>
-                <a href="../journal/journal.html" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Journal</a>
-                <a href="#" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">About</a>
-                <a href="../careers/careers.html" class="inline-block mx-2 md:mx-3 font-semibold hover:underline">Careers</a>
-            </nav>
-            
-            <div class="text-center mb-6">
-                <a href="#" class="font-semibold hover:underline">Get started</a>
             </div>
             
             
-            <p class="text-center text-sm mb-8">© 2025 · All rights reserved</p>
             
-            
-            <div class="mb-8 max-w-2xl mx-auto">
+            <div class="mb-8 max-w-2xl mx-auto lg:max-w-full">
                 <img src="../imagenes/imagenfooter.png" alt="Pattern" class="w-full rounded-lg">
             </div>
             
             
             <div class="text-center">
-                <h2 class="text-7xl md:text-8xl lg:text-9xl font-bold">Aetherfield</h2>
+                <h2 class="text-7xl md:text-8xl lg:text-[200px] font-bold text-[#66640f]">Aetherfield</h2>
             </div>
         </div>
     </footer>
@@ -156,6 +302,8 @@
                 menuBtn.style.transform = 'rotate(0deg)';
             });
         }
+
+         
 
     </script>
 </body>
